@@ -52,4 +52,6 @@ SOFTWARE.
 
 ## Documentation
 
-Live Deployed Application: [View Application]( "https://techblog-spotts.herokuapp.com/")
+Live Deployed Application: [View Application](https://techblog-spotts.herokuapp.com/ "Live Deploy")
+
+![Screenshot](doc/proof.png?raw=true "Proof of Application") 
