@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3001;
 const sequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
     secret: 'Super secret secret',
-    cookie: { maxAge: 36000 },
+    cookie: { expires: 36000 },
     resave: false,
     saveUninitialized: true,
     store: new sequelizeStore({
@@ -26,5 +26,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(routes);
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now Listening'));
+    app.listen(process.env.PORT || 3000, function () {
+        console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+    });
 });
